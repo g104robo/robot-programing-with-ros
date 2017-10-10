@@ -1,0 +1,7 @@
+<launch>
+    <arg name="hoge" default="1.0"/>
+    <node pkg="ros_pkg" name="node_name" type="file_name">
+        <param name="piyo" value="($arg hoge)"/> 
+        <remap from="/hoge_pub" to="/piyo_pub" />
+    </node>
+</launch>

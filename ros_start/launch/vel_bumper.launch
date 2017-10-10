@@ -1,5 +1,11 @@
 <launch>
+    <!--arg name="vel"/--> 
+    <arg name="vel" default="1.0"/>
+    <!--arg name="vel" value="1.0"/-->
+    <group ns="vel1">
     <node pkg="ros_start" name="vel_bumper" type="vel_bumper.py" >
-        <param name="vel_x" value="1.0"/>
+        <param name="vel_x" value="$(arg vel)"/>
+        <remap from="/mobile_base/commands/velocity/" to="/turtle1/cmd_vel" />
     </node>
+    </group>
 </launch>
